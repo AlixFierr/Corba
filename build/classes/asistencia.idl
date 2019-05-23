@@ -1,0 +1,42 @@
+module AsistenciaApp {
+    interface Personal {
+        boolean insertarPersonal(in long identificacion, in wstring nombre, in wstring apellido, in wstring direccion, in wstring telefono, in wstring email);
+        wstring consultarPersonal(in long identificacion);
+        boolean actualizarPersonal(in long idpersonal, in long identificacion, in wstring nombre, in wstring apellido, in wstring direccion, in wstring telefono, in wstring email);
+        boolean eliminarPersonal(in long idpersonal);
+        wstring listarPersonal();
+        oneway void shutdown();
+    };
+    interface asistencia {
+        boolean insertarAsistencia(in long idpersonal, in long identificacion, in wstring fecha, in wstring hora_ingreso);
+        wstring consultarAsistencia(in long idasistencia);
+        boolean actualizarAsistencia(in long idasistencia, in long idpersonal, in long identificacion, in wstring fecha, in wstring hora_ingreso);
+        boolean eliminarAsistencia(in long idasistencia);
+        wstring listarAsistencia();
+        oneway void shutdown();
+    };
+    interface permiso {
+        boolean insertarPermiso(in long identificacion, in wstring fecha, in wstring tiempo, in wstring tipo_permiso, in wstring descripcion);
+        wstring consultarPermiso(in long idpermiso);
+        boolean actualizarPermiso(in long idpermiso, in long identificacion, in wstring fecha, in wstring tiempo, in wstring tipo_permiso, in wstring descripcion);
+        boolean eliminarPermiso(in long idpermiso);
+        wstring listarPermiso();
+        oneway void shutdown();
+    };
+    interface cargo {
+        boolean insertarCargo(in wstring descripcion);
+        wstring consultarCargo(in long idcargo);
+        boolean actualizarCargo(in long idcargo, in wstring descripcion);
+        boolean eliminarCargo(in long idcargo);
+        wstring listarCargo();
+        oneway void shutdown();
+    };
+    interface horario {
+        boolean insertarHorario(in long identificacion, in wstring elunes, in wstring emartes, in wstring emiercoles, in wstring ejueves, in wstring eviernes, in wstring slunes, in wstring smartes, in wstring smiercoles, in wstring sjueves, in wstring sviernes);
+        wstring consultarHorario(in long identificacion);
+        boolean actualizarHorario(in long identificacion, in wstring elunes, in wstring emartes, in wstring emiercoles, in wstring ejueves, in wstring eviernes, in wstring slunes, in wstring smartes, in wstring smiercoles, in wstring sjueves, in wstring sviernes);
+        boolean eliminarHorario(in long identificacion);
+        wstring listarHorario();
+        oneway void shutdown();
+    };
+};
