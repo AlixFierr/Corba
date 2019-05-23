@@ -1,1 +1,1 @@
-"# Corba" 
+Programa para sistemas distribuidos
